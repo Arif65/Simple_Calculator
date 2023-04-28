@@ -5,16 +5,22 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+#base-buttons{
+    display:none;
+    width: 500px;
+    grid-template-columns: auto auto auto auto;
+}
+
 #mode{
     width: 500px;
     display:grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
 }
 
 #mode > button{
-    font-size: medium;
+    font-size: x-large;
     color: #ccc;
-    background-color:rgba(5, 8, 8, 0.546)
+    background-color:rgba(5, 8, 8, 0.546);
 }
 
 #blank{

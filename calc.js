@@ -137,3 +137,9 @@ eq.addEventListener("click", () => {
         }
     }
 });
+
+const mode_bs = document.getElementById('base');
+mode_bs.addEventListener("click", () =>{
+    var div = document.getElementById("base-buttons");
+    div.style.display = "grid";
+});
