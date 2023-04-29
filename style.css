@@ -7,8 +7,9 @@
 
 #base-buttons{
     display:none;
+    height: 20px;
     width: 500px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
 }
 
 #mode{

@@ -1,5 +1,6 @@
 let flag_norm=1;
 let flag_eq=0;
+let flag_base=0;
 
 let flag;
 let a1, a2, b1, b2, c1, c2;
@@ -20,7 +21,7 @@ bts.forEach(cur => {
 const ac = document.getElementById('bAC');
 ac.addEventListener("click", () => {
     document.getElementById("display").textContent="0";
-    fa1=fb1=fc1=fa2=fb2=fc2=undefined;
+    flag=undefined;
 });
 
 const del = document.getElementById('bDEL');
@@ -33,20 +34,24 @@ del.addEventListener("click", () => {
 
 const mode_norm = document.getElementById('norm');
 mode_norm.addEventListener("click", () =>{
+    document.getElementById('base-buttons').style.display = "none";
     document.getElementById("display").textContent=0;
     document.getElementById("blank").textContent="";
     flag=undefined;
     flag_norm=1;
     flag_eq=0;
+    flag_base=0;
 });
 
 const mode_eq = document.getElementById('eqn');
 mode_eq.addEventListener("click", () =>{
+    document.getElementById('base-buttons').style.display = "none";
     document.getElementById("display").textContent=0;
     document.getElementById("blank").textContent="a1=?";
     flag=1;
     flag_norm=0;
     flag_eq=1;
+    flag_base=0;
 });
 
 function fn(a1,b1,c1,a2,b2,c2){
@@ -138,8 +143,47 @@ eq.addEventListener("click", () => {
     }
 });
 
+let base_val;
 const mode_bs = document.getElementById('base');
 mode_bs.addEventListener("click", () =>{
-    var div = document.getElementById("base-buttons");
-    div.style.display = "grid";
+    document.getElementById('base-buttons').style.display = "grid";
+    flag_base=1;
+    flag_eq=0;
+    flag_norm=0;
+    base_val=10;
+});
+
+function convert_base(val, from, to){
+    let toDec=0;
+    let pow=1;
+    for(let i=val.length-1; i>=0; i--)
+    {
+        console.log(val[i]);
+    }
+    
+    return toDec;
+}
+
+const mode_dec = document.getElementById('bt-dec');
+mode_dec.addEventListener("click", () => {
+    let cur = document.getElementById("display").textContent;
+    let output = convert_base(cur, base_val, 10);
+    document.getElementById("display").textContent=output;
+    base_val=10;
+});
+
+const mode_bin = document.getElementById('bt-bin');
+mode_bin.addEventListener("click", () => {
+    let cur = document.getElementById("display").textContent;
+    let output = convert_base(cur, base_val, 2);
+    document.getElementById("display").textContent=output;
+    base_val=2;
+});
+
+const mode_oct = document.getElementById('bt-oct');
+mode_oct.addEventListener("click", () => {
+    let cur = document.getElementById("display").textContent;
+    let output = convert_base(cur, base_val, 8);
+    document.getElementById("display").textContent=output;
+    base_val=8;
 });
