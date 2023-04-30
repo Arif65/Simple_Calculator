@@ -222,8 +222,8 @@ mode_bs.addEventListener("click", () =>{
         cur.disabled = true;
     });
     document.getElementById('base-buttons').style.display = "grid";
-    document.getElementById('blank').textContent="";
     document.getElementById("display").textContent=0;
+    document.getElementById('blank').textContent="";
     flag_base=1;
     flag_eq=0;
     flag_norm=0;
