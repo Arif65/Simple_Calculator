@@ -223,6 +223,7 @@ mode_bs.addEventListener("click", () =>{
     });
     document.getElementById('base-buttons').style.display = "grid";
     document.getElementById('blank').textContent="";
+    document.getElementById("display").textContent=0;
     flag_base=1;
     flag_eq=0;
     flag_norm=0;
