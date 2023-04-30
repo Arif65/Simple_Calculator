@@ -6,6 +6,29 @@ let flag;
 let a1, a2, b1, b2, c1, c2;
 let x, y;
 
+const title = document.getElementById("title-txt");
+const s = title.innerText;
+let html = "";
+for(let i=0; i<s.length; i++){
+    const char = s.charAt(i);
+    let isEven=1;
+    if(i%2)isEven=0;
+    html+=`<span class="${isEven?'even-pos-title-design':'odd-pos-title-design'}">${char}</span>`;
+}
+console.log(html);
+title.innerHTML = html;
+
+setInterval(() => {
+    const d = new Date();
+    console.log(d);
+    const sec = d.getSeconds(d);
+    let val=sec%2;
+    let col;
+    if(val%2)col = "cornsilk";
+    else col = "lavender";
+    title.style.backgroundColor = col;
+},1000);
+
 const bts = document.querySelectorAll(".bt");
 bts.forEach(cur => {
     cur.addEventListener("click", () => {        
@@ -34,6 +57,19 @@ del.addEventListener("click", () => {
 
 const mode_norm = document.getElementById('norm');
 mode_norm.addEventListener("click", () =>{
+    mode_norm.style.color = "white";
+    mode_norm.style.backgroundColor = "olive";
+    mode_eq.style.color = "black"
+    mode_eq.style.backgroundColor = "darkgray";
+    mode_bs.style.color = "black"
+    mode_bs.style.backgroundColor = "darkgray";
+
+    mode_dec.style.color = "white";
+    mode_dec.style.backgroundColor = "olivedrab";
+    mode_bin.style.color = "black"
+    mode_bin.style.backgroundColor = "#f5f5f5";
+    mode_oct.style.color = "black"
+    mode_oct.style.backgroundColor = "#f5f5f5";
     const dis = document.querySelectorAll('.bt');
     dis.forEach(cur => {
         cur.disabled = false;
@@ -49,6 +85,20 @@ mode_norm.addEventListener("click", () =>{
 
 const mode_eq = document.getElementById('eqn');
 mode_eq.addEventListener("click", () =>{
+    mode_eq.style.color = "white";
+    mode_eq.style.backgroundColor = "olive";
+    mode_norm.style.color = "black"
+    mode_norm.style.backgroundColor = "darkgray";
+    mode_bs.style.color = "black"
+    mode_bs.style.backgroundColor = "darkgray";
+
+    mode_dec.style.color = "white";
+    mode_dec.style.backgroundColor = "olivedrab";
+    mode_bin.style.color = "black"
+    mode_bin.style.backgroundColor = "#f5f5f5";
+    mode_oct.style.color = "black"
+    mode_oct.style.backgroundColor = "#f5f5f5";
+
     const dis = document.querySelectorAll('.bt');
     dis.forEach(cur => {
         cur.disabled = false;
@@ -154,6 +204,19 @@ eq.addEventListener("click", () => {
 let base_val;
 const mode_bs = document.getElementById('base');
 mode_bs.addEventListener("click", () =>{
+    mode_bs.style.color = "white";
+    mode_bs.style.backgroundColor = "olive";
+    mode_norm.style.color = "black"
+    mode_norm.style.backgroundColor = "darkgray";
+    mode_eq.style.color = "black"
+    mode_eq.style.backgroundColor = "darkgray";
+
+    mode_dec.style.color = "white";
+    mode_dec.style.backgroundColor = "olivedrab";
+    mode_bin.style.color = "black"
+    mode_bin.style.backgroundColor = "#f5f5f5";
+    mode_oct.style.color = "black"
+    mode_oct.style.backgroundColor = "#f5f5f5";
     const dis = document.querySelectorAll('.bt-base-dis');
     dis.forEach(cur => {
         cur.disabled = true;
@@ -180,6 +243,12 @@ function convert_base(val, from, to){
 
 const mode_dec = document.getElementById('bt-dec');
 mode_dec.addEventListener("click", () => {
+    mode_dec.style.color = "white";
+    mode_dec.style.backgroundColor = "olivedrab";
+    mode_bin.style.color = "black"
+    mode_bin.style.backgroundColor = "#f5f5f5";
+    mode_oct.style.color = "black"
+    mode_oct.style.backgroundColor = "#f5f5f5";
     const ebl = document.querySelectorAll('.dig');
     ebl.forEach(cur => {
         cur.disabled = false;
@@ -193,6 +262,12 @@ mode_dec.addEventListener("click", () => {
 
 const mode_bin = document.getElementById('bt-bin');
 mode_bin.addEventListener("click", () => {
+    mode_bin.style.color = "white";
+    mode_bin.style.backgroundColor = "olivedrab";
+    mode_dec.style.color = "black"
+    mode_dec.style.backgroundColor = "#f5f5f5";
+    mode_oct.style.color = "black"
+    mode_oct.style.backgroundColor = "#f5f5f5";
     const ebl = document.querySelectorAll('.dig');
     ebl.forEach(cur => {
         cur.disabled = false;
@@ -209,6 +284,12 @@ mode_bin.addEventListener("click", () => {
 
 const mode_oct = document.getElementById('bt-oct');
 mode_oct.addEventListener("click", () => {
+    mode_oct.style.color = "white";
+    mode_oct.style.backgroundColor = "olivedrab";
+    mode_bin.style.color = "black"
+    mode_bin.style.backgroundColor = "#f5f5f5";
+    mode_dec.style.color = "black"
+    mode_dec.style.backgroundColor = "#f5f5f5";
     const ebl = document.querySelectorAll('.dig');
     ebl.forEach(cur => {
         cur.disabled = false;

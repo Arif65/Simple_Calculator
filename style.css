@@ -1,30 +1,69 @@
+#title-txt{
+    text-align: center;
+    font-size: xx-large;
+}
+
+.even-pos-title-design{
+    color:red;
+}
+.odd-pos-title-design{
+    color:darkblue
+}
+
 #container{
     max-width: 500px;
     margin-top:20vh;
-    margin-left: 20vh;
+    /* margin-left: 20vh;*/
+    margin-left:75vh;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #base-buttons{
     position: absolute;
-    top:230px;
-    left:202px;
+    top:305px;
+    left:735px;
     height: 20px;
     width: 500px;
     display:none;
     grid-template-columns: auto auto auto;
 }
 
-#mode{
+#base-buttons > button{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#mode{ 
+    height: 40px;
     width: 500px;
     display:grid;
     grid-template-columns: auto auto auto;
 }
 
 #mode > button{
+    font-size: large;
+    color:black;
+    background-color:darkgray;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#mode > button:hover{
     font-size: x-large;
-    color: #ccc;
-    background-color:rgba(5, 8, 8, 0.546);
+    color:blue;
+}
+#base-buttons > button:hover{
+    font-size:medium;
+    color:cadetblue;
+    /* color:#f5f5f5 */
+}
+#buttons > button:hover{
+    font-size: 30px;
+    color: #fff;
 }
 
 #blank{
@@ -58,12 +97,19 @@
 }
 
 #buttons > button {
-    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color:darkgrey;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px; 
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #buttons{
     height:200px;
-    font-size:75px;
     display:grid;
     grid-template-columns: auto auto auto auto;
 }
