@@ -34,6 +34,10 @@ del.addEventListener("click", () => {
 
 const mode_norm = document.getElementById('norm');
 mode_norm.addEventListener("click", () =>{
+    const dis = document.querySelectorAll('.bt');
+    dis.forEach(cur => {
+        cur.disabled = false;
+    });
     document.getElementById('base-buttons').style.display = "none";
     document.getElementById("display").textContent=0;
     document.getElementById("blank").textContent="";
@@ -45,6 +49,10 @@ mode_norm.addEventListener("click", () =>{
 
 const mode_eq = document.getElementById('eqn');
 mode_eq.addEventListener("click", () =>{
+    const dis = document.querySelectorAll('.bt');
+    dis.forEach(cur => {
+        cur.disabled = false;
+    });
     document.getElementById('base-buttons').style.display = "none";
     document.getElementById("display").textContent=0;
     document.getElementById("blank").textContent="a1=?";
@@ -146,7 +154,12 @@ eq.addEventListener("click", () => {
 let base_val;
 const mode_bs = document.getElementById('base');
 mode_bs.addEventListener("click", () =>{
+    const dis = document.querySelectorAll('.bt-base-dis');
+    dis.forEach(cur => {
+        cur.disabled = true;
+    });
     document.getElementById('base-buttons').style.display = "grid";
+    document.getElementById('blank').textContent="";
     flag_base=1;
     flag_eq=0;
     flag_norm=0;
@@ -158,22 +171,36 @@ function convert_base(val, from, to){
     let pow=1;
     for(let i=val.length-1; i>=0; i--)
     {
-        console.log(val[i]);
+        toDec+=Number(val[i])*pow;
+        pow*=from;
     }
-    
-    return toDec;
+    let res=toDec.toString(to);
+    return res;
 }
 
 const mode_dec = document.getElementById('bt-dec');
 mode_dec.addEventListener("click", () => {
+    const ebl = document.querySelectorAll('.dig');
+    ebl.forEach(cur => {
+        cur.disabled = false;
+    });
     let cur = document.getElementById("display").textContent;
     let output = convert_base(cur, base_val, 10);
     document.getElementById("display").textContent=output;
     base_val=10;
 });
 
+
 const mode_bin = document.getElementById('bt-bin');
 mode_bin.addEventListener("click", () => {
+    const ebl = document.querySelectorAll('.dig');
+    ebl.forEach(cur => {
+        cur.disabled = false;
+    });
+    const dis = document.querySelectorAll('.bt-bin-dis');
+    dis.forEach(cur => {
+        cur.disabled = true;
+    });
     let cur = document.getElementById("display").textContent;
     let output = convert_base(cur, base_val, 2);
     document.getElementById("display").textContent=output;
@@ -182,6 +209,14 @@ mode_bin.addEventListener("click", () => {
 
 const mode_oct = document.getElementById('bt-oct');
 mode_oct.addEventListener("click", () => {
+    const ebl = document.querySelectorAll('.dig');
+    ebl.forEach(cur => {
+        cur.disabled = false;
+    });
+    const dis = document.querySelectorAll('.bt-oct-dis');
+    dis.forEach(cur => {
+        cur.disabled = true;
+    });
     let cur = document.getElementById("display").textContent;
     let output = convert_base(cur, base_val, 8);
     document.getElementById("display").textContent=output;

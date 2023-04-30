@@ -6,9 +6,12 @@
 }
 
 #base-buttons{
-    display:none;
+    position: absolute;
+    top:230px;
+    left:202px;
     height: 20px;
     width: 500px;
+    display:none;
     grid-template-columns: auto auto auto;
 }
 
