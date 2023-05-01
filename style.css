@@ -21,9 +21,10 @@
 #base-buttons{
     position: absolute;
     top:305px;
-    left:735px;
+    /* left:735px; */
+    left: 905px;
     height: 20px;
-    width: 500px;
+    width: 148px;
     display:none;
     grid-template-columns: auto auto auto;
 }
@@ -62,7 +63,7 @@
     /* color:#f5f5f5 */
 }
 #buttons > button:hover{
-    font-size: 30px;
+    /* font-size: 30px; */
     color: #fff;
 }
 
